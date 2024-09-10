@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cb68q1ee1tba1"]
+
+[ext_resource type="Script" path="res://actors/projectile/projectile.gd" id="1_kcws4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vyhl8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hm2xj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_od6lg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3gyac"]
+
+[node name="projectile" type="Area2D"]
+position = Vector2(235, 174)
+scale = Vector2(1.55682, 1.67523)
+script = ExtResource("1_kcws4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6.694, 10)
+texture = SubResource("CanvasTexture_vyhl8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-2.11106, 0)
+scale = Vector2(-2.28655, 0.669358)
+texture = SubResource("CanvasTexture_hm2xj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-5.3736, -1.90735e-06)
+scale = Vector2(-5.10857, -0.262035)
+texture = SubResource("CanvasTexture_od6lg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3gyac")
+
+[node name="TimeToLive" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="TimeToLive" to="." method="_on_time_to_live_timeout"]
