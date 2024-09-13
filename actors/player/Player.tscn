@@ -12,6 +12,7 @@ size = Vector2(50, 50)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(399, 267)
+scale = Vector2(0.42448, 0.426823)
 motion_mode = 1
 script = ExtResource("1_5amog")
 projectile_scene = ExtResource("2_2v2fy")
@@ -29,4 +30,4 @@ texture = SubResource("CanvasTexture_wvv47")
 shape = SubResource("RectangleShape2D_0lelv")
 
 [node name="ProjectileRefPoint" type="Node2D" parent="."]
-position = Vector2(33, 2)
+position = Vector2(64, 2)
